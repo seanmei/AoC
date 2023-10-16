@@ -12,9 +12,9 @@ while True:
     
     if p1 == 'A':
         totalScore += {
-            "X": 3 + 1,
-            "Y": 6 + 2,
-            "Z": 0 + 3
+            "X": 0 + 3,
+            "Y": 3 + 1,
+            "Z": 6 + 2
         }[p2]
     elif p1 == 'B': 
         totalScore += {
@@ -24,9 +24,9 @@ while True:
         }[p2]
     elif p1 == 'C':
         totalScore += {
-            "X": 6 + 1,
-            "Y": 0 + 2,
-            "Z": 3 + 3
+            "X": 0 + 2,
+            "Y": 3 + 3,
+            "Z": 6 + 1
         }[p2]
 
         
