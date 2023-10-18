@@ -1,4 +1,3 @@
-
 list = open('input3.txt', 'r')
 
 total = 0 
