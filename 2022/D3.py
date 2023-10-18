@@ -4,7 +4,6 @@ list = open('input3.txt', 'r')
 total = 0 
     
 while True:
-
     # Get next line from file
     line = list.readline()
     
@@ -18,26 +17,32 @@ while True:
         p2 = int(leng/2)
         p3 = int(leng-1)
         
-        x = slice(p1)
+        x = slice(p2)
         y = slice(p2, p3)
         
-        r1 = line[x]#get items from first 1st rucksack ie. first half 
-        r2 = line[y] #gets items from 2nd rucksack ie. second half
+        r1 = line[x]#get items from first 1st compartment ie. first half 
+        r2 = line[y] #gets items from 2nd compartment ie. second half
         
-        item = ''
+        print(r1, r2)
         
-        for l in range (0, p1):
-            temp = r1[l]
-            result = r2.find(temp)
-            if result >0: 
-                item = r2[result]
-                print(item)
+        item = '' #var for item in both 
+        
+        for l in range (0, p2): #iterate the first compartment 
+            temp = r1[l] #get each letter 
+            result = r2.find(temp) #find the index of the letter in the second compartment 
+            if result > -1: #find returns -1 if no match found 
+                item = r2[result] #get the letter that match 
                 break
-        if item.islower():
-            val = ord(item) - 96
+            else: 
+                print('ERROR')
+            
+        #assign priority value     
+        if item.islower(): #check if lowercase or upper 
+            val = ord(item) - 96 #get ascii value and adjust to right value 
             total += val
         else: 
-            val = ord(item) - 13
+            #print(item)
+            val = ord(item) - 38
             total += val
 
 print(total)
