@@ -1,25 +1,21 @@
 list = open('input3.txt', 'r')
 
-num_lines = int(sum(1 for _ in open('input3.txt'))/3)
-print(num_lines)
+content = list.readlines() 
 
 total = 0 
-    
-while True:
+
+numLines = len(content)
+
+print(numLines)
+
+for i in range(0, 300, 3): #for loop in range 0-299 and incremnet by 3 
     # Get next line from file
     lineREAD = list.readline()
     group = []
-    for i in range(0,3): #group elves into 3
-        line = list.readline()
-        leng = int(len(line)) #remove the "\n"
-        y = leng-1
-        lineS = line[slice(y)]
-        if len(lineS) >0:
-            group.append(lineS) #add to list 
-        else:
-            break
     
-        
+    for j in range(3):
+        group.append(content[i+j])
+   
     #print(group)
     
     if len(group) < 1:
